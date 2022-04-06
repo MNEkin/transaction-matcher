@@ -1,0 +1,83 @@
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 offset-sm-2"> {{report?.error}}
+        <input class="form-control" type="file" (change)="onChange1($event)">
+        <input class="form-control" type="file" (change)="onChange2($event)">
+         
+        <button (click)="onUpload()" class="btn btn-success" [disabled]="!file1 || !file2">
+          Upload
+        </button>
+        <div>
+          <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+              <tr scope="col">Comparison Result</tr> 
+              
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <tr>
+                    <td>{{fileName1 || 'File 1'}}</td>
+                  </tr>
+                  <tr>
+                    <td>Total Records : {{report?.totalRecords1 || "0"}} </td>
+                  </tr>
+                  <tr>
+                    <td>Matching Records: {{report?.matchedRecord || '0'}} </td>
+                  </tr>
+                  <tr>
+                    <td>Unmatched Records: {{report?.unmatchedRecord1 || '0'}} </td>
+                  </tr>
+                </td>
+                
+                <td>
+                  <tr>
+                    <td>{{fileName2 || 'File 2'}}</td>
+                  </tr>
+                  <tr>
+                    <td>Total Records: {{report?.totalRecords2 || '0'}}</td>
+                  </tr>
+                  <tr>
+                    <td>Matching Records: {{report?.matchedRecord || '0'}}</td>
+                  </tr>
+                  <tr>
+                    <td>Unmatched Records: {{ report?.unmatchedRecord2 || '0'}}</td>
+                  </tr>
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+
+          <table class="table table-bordered table-striped" *ngIf="report">
+            <thead class="thead-dark">
+              <tr scope="col">Unmatched Report</tr> 
+              
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div *ngFor="let possibleMatch of report.possibleMatchList">
+                    <tr>
+                      <td>
+                        {{possibleMatch.t1?.transactionID || 'no match'}}
+                      </td>
+                      <td>
+                        {{possibleMatch.t2?.transactionID || 'no match'}}
+                      </td>
+                      <td>
+                        {{possibleMatch.matchRate}}
+                      </td>
+                    </tr>
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
