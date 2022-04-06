@@ -17,7 +17,7 @@
           "build": {
             "builder": "@angular-devkit/build-angular:browser",
             "options": {
-              "outputPath": "dist/transaction-matcher1",
+              "outputPath": "dist/transaction-matcher",
               "index": "src/index.html",
               "main": "src/main.ts",
               "polyfills": "src/polyfills.ts",
@@ -68,10 +68,10 @@
             "builder": "@angular-devkit/build-angular:dev-server",
             "configurations": {
               "production": {
-                "browserTarget": "transaction-matcher1:build:production"
+                "browserTarget": "transaction-matcher:build:production"
               },
               "development": {
-                "browserTarget": "transaction-matcher1:build:development"
+                "browserTarget": "transaction-matcher:build:development"
               }
             },
             "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
           "extract-i18n": {
             "builder": "@angular-devkit/build-angular:extract-i18n",
             "options": {
-              "browserTarget": "transaction-matcher1:build"
+              "browserTarget": "transaction-matcher:build"
             }
           },
           "test": {
@@ -102,6 +102,6 @@
         }
       }
     },
-    "defaultProject": "transaction-matcher1"
+    "defaultProject": "transaction-matcher"
   }
   
