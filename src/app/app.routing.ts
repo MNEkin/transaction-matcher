@@ -5,6 +5,7 @@ import { MatcherComponent } from './matcher/matcher.component';
 
 const routes: Routes = [
   {path: '', component: MatcherComponent},
+  {path: '/', component: MatcherComponent},
   {path: 'upload', component: MatcherComponent},
   {path: '**', redirectTo: '/'}
 ];
