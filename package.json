@@ -1,5 +1,5 @@
 {
-  "name": "transaction-matcher1",
+  "name": "transaction-matcher",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
